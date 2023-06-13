@@ -23,6 +23,8 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   next();
 });
+
+app.get("/", (req, res) => res.send("Welcome!"));
 //Routing Middleware
 app.use("/api/auth", require("./routes/authRoute"));
 app.use("/api/comment", require("./routes/commentRoute"));
