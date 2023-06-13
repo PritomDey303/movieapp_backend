@@ -6,7 +6,7 @@ const User = require("../database/schema/userSchema");
 exports.signup = async (req, res) => {
   try {
     try {
-      const { username, mobile, name, email, password } = req.body;
+      const { username, mobile, name, email, thumbnail, password } = req.body;
       const existingUser = await User.find({
         $or: [{ email: email }, { username: username }, { mobile: mobile }],
       });
@@ -25,6 +25,7 @@ exports.signup = async (req, res) => {
         email,
         mobile,
         password: newPassword,
+        thumbnail: thumbnail,
       });
 
       res.json({

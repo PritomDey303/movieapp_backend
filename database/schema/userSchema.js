@@ -38,6 +38,11 @@ const userSchema = new Schema(
       trim: true,
       minlength: 3,
     },
+    thumbnail: {
+      type: String,
+      required: true,
+      trim: true,
+    },
   },
   {
     timestamps: true,
